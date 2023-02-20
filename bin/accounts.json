@@ -1,0 +1,94 @@
+[
+  {
+    "username": "test",
+    "password": "admin",
+    "lastWord": "procercoid",
+    "wasSolved": true,
+    "lastWordGuesses": 1,
+    "playedGames": 1,
+    "wonGames": 1,
+    "guessDistribution": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "username": "ciao",
+    "password": "mamma",
+    "lastWord": "dromometer",
+    "wasSolved": true,
+    "lastWordGuesses": 1,
+    "playedGames": 18,
+    "wonGames": 18,
+    "guessDistribution": [
+      17,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "username": "mamma",
+    "password": "ciao",
+    "lastWord": "dromometer",
+    "wasSolved": false,
+    "lastWordGuesses": 13,
+    "playedGames": 14,
+    "wonGames": 12,
+    "guessDistribution": [
+      12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "username": "fefe",
+    "password": "efef",
+    "lastWord": "pedipalpal",
+    "wasSolved": true,
+    "lastWordGuesses": 2,
+    "playedGames": 1,
+    "wonGames": 1,
+    "guessDistribution": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+]
