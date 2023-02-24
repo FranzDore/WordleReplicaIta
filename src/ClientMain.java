@@ -24,6 +24,7 @@ public class ClientMain {
 	//Alcuni di questi parametri vengono inizializzati nel metodo "readConfig()"
 	public static InetAddress ms_addr; //Indirizzo
 	public static MulticastSocket ms_client; //Socket effettiva
+	public static int ms_port;
 	
 	public static void main (String[] args) {
 		
@@ -161,7 +162,7 @@ public class ClientMain {
 				System.exit(1);
 			}
 			
-			ms_client = new MulticastSocket(3456); // create a multicast client socket
+			ms_client = new MulticastSocket(ms_port); // create a multicast client socket
 			MulticastHandler multicastHandler = new MulticastHandler(ms_client); //Sarà startato dopo il login
 			Thread multicastHandlerThread = new Thread(multicastHandler); // create a multicast notification handler thread
 			
@@ -325,8 +326,8 @@ public class ClientMain {
 		prop.load(input);
 		port = Integer.parseInt(prop.getProperty("port"));
 		hostName = prop.getProperty("hostname");
-		//ms_addr = InetAddress.getByName(prop.getProperty("multicastAddr")); 
-		ms_addr = InetAddress.getByName("225.4.5.6"); 
+		ms_addr = InetAddress.getByName(prop.getProperty("multicastAddr")); 
+		ms_port = Integer.parseInt(prop.getProperty("msPort"));
 		input.close();
 	}	
 }

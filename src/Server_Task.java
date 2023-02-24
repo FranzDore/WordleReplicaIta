@@ -167,21 +167,13 @@ public class Server_Task implements Runnable{
 			System.out.println("\n > Client " + socket.getInetAddress().toString() + " logged in.\n");
 			
 	
-			//Entriamo nel gruppo di multicast per poter mandare messaggi.
-			MulticastSocket ms_server = new MulticastSocket();
-			//InetSocketAddress ms_group = new InetSocketAddress(ia, ServerMain.port);
-			//NetworkInterface netIF = NetworkInterface.getByName("bge0");
 			
-			//ms_server.joinGroup(ia);
 						
 			//Ora può iniziare la fase di gioco
 			checker.place(temp); //aggiungiamo l'account alla lista di quelli attivi
 			gameHandler(socket, in, out, temp, ia);
 			checker.delete(temp); //if gameHandler method has returned, it means account has logged out: we remove him from acctive players.
 			
-			//Usciamo dal gruppo di multicast e chiudiamo la socket per il logout.
-			//ms_server.leaveGroup(ia);
-			ms_server.close();
 			
 		} catch(IOException e) {
 			e.printStackTrace();
@@ -321,7 +313,7 @@ public class Server_Task implements Runnable{
 				toBeShared = "'"+account.username+"' ha indovinato la parola in "+account.lastWordGuesses+" tentativi!";
 			else toBeShared = "'" + account.username + "' non ha indovinato la parola";
 			
-			DatagramPacket msgAsPacket = new DatagramPacket(toBeShared.getBytes(), toBeShared.length(), InetAddress.getByName("225.4.5.6"), 3456);
+			DatagramPacket msgAsPacket = new DatagramPacket(toBeShared.getBytes(), toBeShared.length(), ia, 3456);
 			MulticastSocket ms_socket = new MulticastSocket();
 			ms_socket.send(msgAsPacket);
 			ms_socket.close();
